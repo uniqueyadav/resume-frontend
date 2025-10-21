@@ -74,14 +74,14 @@ export default function ResumePreview() {
 
         <section>
           <span className="basic-heading">Education</span>
-          <div className="line"></div>
+          <div className="line"></div><br />
           {(resume.education || []).map((ed, idx) => (
             <div key={idx} className="education-item">
               <div className="college">
                 <strong>
                 {ed.institution}
               </strong>
-              </div>
+              </div><br />
               <div className="year">
                 <span className="small">{ed.year}</span>
               </div>
@@ -99,8 +99,8 @@ export default function ResumePreview() {
           <div className="line"></div><br />
           {(resume.projects || []).map((p, idx) => (
             <div key={idx} className="project-item">
-              <strong>{p.title}</strong>
-              <p>{p.description}</p>
+              <strong>{p.title}</strong><br />
+              <small>{p.description}</small>
               <p className="small"><b>Technology:</b> {p.tech}</p>
             </div>
           ))}
@@ -125,8 +125,8 @@ export default function ResumePreview() {
           <div className="line"></div><br />
           {(resume.other || []).map((o, idx) => (
             <div key={idx} className="project-item">
-              <span>{o.details1}</span><br />
-              <small>{o.details2}</small><br />
+              <strong>{o.details1}</strong>
+              <p>{o.details2}</p>
               <small className="small"> {o.details3}</small>
             </div>
           ))}

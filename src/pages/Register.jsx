@@ -50,7 +50,7 @@ export default function Register() {
 
           <input
             type="password"
-            placeholder="Password"
+            placeholder="New Password"
             className="login-input"
             value={form.password}
             onChange={(e) => setForm({ ...form, password: e.target.value })}

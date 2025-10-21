@@ -107,7 +107,7 @@ export default function ResumeEditor() {
           />
           <input
             type="text"
-            placeholder="Phone"
+            placeholder="Phone (Ex- +91 XXXXXXXXXX)"
             value={resume.phone}
             onChange={(e) => setResume({ ...resume, phone: e.target.value })}
             className="editor-input"
@@ -236,7 +236,7 @@ export default function ResumeEditor() {
                 className="editor-input"
               />
               <input
-                placeholder="Score/Grade"
+                placeholder="Score/Grade (Ex- Score : 80% / Grade : A)"
                 value={edu.score}
                 onChange={(e) => handleArrayChange("education", { ...edu, score: e.target.value }, idx)}
                 className="editor-input"
@@ -324,19 +324,19 @@ export default function ResumeEditor() {
                 className="editor-input"
               />
               <input
-                placeholder="Details 1st"
+                placeholder="Details in strong text"
                 value={oth.details1}
                 onChange={(e) => handleArrayChange("other", { ...oth, details1: e.target.value }, idx)}
                 className="editor-input"
               />
               <input
-                placeholder="Details 2nd"
+                placeholder="Details in medium text"
                 value={oth.details2}
                 onChange={(e) => handleArrayChange("other", { ...oth, details2: e.target.value }, idx)}
                 className="editor-input"
               />
               <input
-                placeholder="Details 3rd"
+                placeholder="Details in small text"
                 value={oth.details3}
                 onChange={(e) => handleArrayChange("other", { ...oth, details3: e.target.value }, idx)}
                 className="editor-input"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../api";
 import { useNavigate, Link } from "react-router-dom";
 import "./Style.css";
@@ -6,7 +6,20 @@ import "./Style.css";
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const [theme, setTheme] = useState("light");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(saved || (prefersDark ? "dark" : "light"));
+  }, []);
+
+  // Apply theme to document body
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const handle = async (e) => {
     e.preventDefault();
@@ -24,6 +37,13 @@ export default function Login() {
 
   return (
     <div className="login-root">
+       {/* 🌗 Theme Toggle Button */}
+      <button
+        className="theme-toggle"
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      >
+        {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      </button>
       <div className="login-card">
         <div className="login-header">
           <h2>Welcome Back</h2>
@@ -62,6 +82,10 @@ export default function Login() {
           </Link>
         </div>
       </div>
+      {/* Footer */}
+      <footer className="login-footer">
+        © 2025 Designed By <strong>AMIT YADAV</strong> | All Rights Reserved
+      </footer>
     </div>
   );
 }

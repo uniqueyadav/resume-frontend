@@ -6,6 +6,7 @@ import "./Style.css";
 export default function ResumeEditor() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [theme, setTheme] = useState("light");
   const [resume, setResume] = useState({
     name: "",
     email: "",
@@ -23,6 +24,18 @@ export default function ResumeEditor() {
     other:[],
   });
   const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(saved || (prefersDark ? "dark" : "light"));
+    }, []);
+  
+    // Apply theme to document body
+    useEffect(() => {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }, [theme]);
 
   useEffect(() => {
     if (id) loadResume();
@@ -76,6 +89,13 @@ export default function ResumeEditor() {
 
   return (
     <div className="editor-root">
+      {/* 🌗 Theme Toggle Button */}
+      <button
+        className="theme-toggle"
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      >
+        {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      </button>
       <div className="editor-container">
         <header className="editor-header">
           <h2>Edit Resume</h2>
@@ -348,6 +368,10 @@ export default function ResumeEditor() {
           </button>
         </section>
       </div>
+       {/* Footer */}
+      <footer className="login-footer">
+        © 2025 Designed By <strong>AMIT YADAV</strong> | All Rights Reserved
+      </footer>
     </div>
   );
 }

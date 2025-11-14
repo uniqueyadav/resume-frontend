@@ -370,7 +370,7 @@ export default function ResumeEditor() {
       </div>
        {/* Footer */}
       <footer className="login-footer">
-        © 2025 Designed By <strong>AMIT YADAV, ABHINAY & ADITYA </strong> | All Rights Reserved
+        © 2025 Designed By <strong>AMIT YADAV</strong> | All Rights Reserved
       </footer>
     </div>
   );

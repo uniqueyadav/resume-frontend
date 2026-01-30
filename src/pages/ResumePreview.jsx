@@ -140,9 +140,9 @@ export default function ResumePreview() {
         </footer>
       </div>
        {/* Footer */}
-      {/* <footer className="login-footer">
+      <footer className="login-footer">
         © 2025 Designed By AMIT YADAV | All Rights Reserved
-      </footer> */}
+      </footer>
     </div>
   );
 }

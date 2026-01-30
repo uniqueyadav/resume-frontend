@@ -195,7 +195,7 @@ export default function ResumeEditor() {
         </section>
 
         <section className="editor-section">
-          <h3>Experiences</h3>
+          <h3>Internship/Training</h3>
           {resume.experiences.map((exp, idx) => (
             <div key={idx} className="editor-array-item">
               <input

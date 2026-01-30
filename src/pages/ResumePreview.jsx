@@ -36,6 +36,7 @@ export default function ResumePreview() {
           <div className="git">
           <p><b>Linkedin - </b>{resume.linkedin}</p>
           <p><b>GitHub - </b>{resume.github}</p>
+          <p><b>Portfolio - </b>{resume.portfolio}</p>
         </div>
         </div>
        </div>

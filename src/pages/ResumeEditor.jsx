@@ -14,6 +14,7 @@ export default function ResumeEditor() {
     address: "",
     linkedin: "",
     github: "",
+    portfolio: "",
     headline: "",
     summary: "",
     skills: [],
@@ -51,6 +52,7 @@ export default function ResumeEditor() {
         address: data.address || "",
         linkedin: data.linkedin || "",
         github: data.github || "",
+        portfolio: data.portfolio || "",
         headline: data.headline || "",
         summary: data.summary || "",
         skills: data.skills || [],
@@ -151,6 +153,13 @@ export default function ResumeEditor() {
             placeholder="GitHub Link"
             value={resume.github}
             onChange={(e) => setResume({ ...resume, github: e.target.value })}
+            className="editor-input"
+          />
+          <input
+            type="text"
+            placeholder="Portfolio Link"
+            value={resume.portfolio}
+            onChange={(e) => setResume({ ...resume, portfolio: e.target.value })}
             className="editor-input"
           />
           
